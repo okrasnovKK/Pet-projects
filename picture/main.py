@@ -1,0 +1,157 @@
+from turtle import *
+import math
+speed(6)
+color('red', 'yellow')
+bgcolor('#87CEEB')
+##painting grass
+up()
+setpos(-340, -200)
+lt(45)
+down()
+while pos() < (340, -200):
+    color('green')
+    begin_fill()
+    fd(20)
+    rt(90)
+    fd(20)
+    lt(90)
+    end_fill()
+begin_fill()
+rt(135)
+fd(80)
+rt(90)
+fd(710)
+rt(90)
+fd(80)
+end_fill()
+seth(0)
+##painting mounting
+##1
+color('grey')
+up()
+setpos(-340, -50)
+lt(70)
+down()
+begin_fill()
+fd(200)
+rt(140)
+fd(200)
+end_fill()
+bk(120)
+color('white')
+begin_fill()
+bk(80)
+rt(40)
+fd(80)
+end_fill()
+seth(0)
+
+##2
+color('grey')
+up()
+setpos(-250, -50)
+lt(70)
+down()
+begin_fill()
+fd(180)
+rt(140)
+fd(180)
+end_fill()
+bk(120)
+color('white')
+begin_fill()
+bk(60)
+rt(40)
+fd(60)
+end_fill()
+seth(0)
+##3
+color('grey')
+up()
+setpos(-300, -60)
+lt(40)
+down()
+begin_fill()
+fd(100)
+rt(80)
+fd(100)
+end_fill()
+bk(75)
+color('white')
+begin_fill()
+bk(25)
+rt(100)
+fd(25)
+end_fill()
+seth(0)
+# painting lake
+color('#6878c9')
+up()
+setpos(250, -130)
+down()
+a = 150
+b = 90
+dx = xcor()
+dy = ycor()
+begin_fill()
+for deg in range(361):
+    rad = math.radians(deg)
+    x = a * math.sin(rad) + dx
+    y = -b * math.cos(rad) + b + dy
+    goto(x, y)
+end_fill()
+#painting sun
+color('red', 'yellow')
+up()
+setpos(145, 150)
+down()
+begin_fill()
+while True:
+    fd(200)
+    lt(170)
+    if xcor() < 146 and ycor() < 151:
+        break
+end_fill()
+
+#painting cloud
+color('#ecf0f1')
+x = 0
+y = 150
+for i in range(3):
+    up()
+    setpos(x, y)
+    down()
+    begin_fill()
+    circle(30)
+    end_fill()
+    up()
+    setpos(x+20, y+20)
+    down()
+    begin_fill()
+    circle(30)
+    end_fill()
+    up()
+    setpos(x + 50, y)
+    down()
+    begin_fill()
+    circle(30)
+    end_fill()
+    up()
+    setpos(x + 70, y + 20)
+    down()
+    begin_fill()
+    circle(30)
+    end_fill()
+    up()
+    setpos(x + 90, y)
+    down()
+    begin_fill()
+    circle(30)
+    end_fill()
+    x -= 100
+    if y < 100:
+        y += 100
+    else:
+        y -= 100
+exitonclick()
+
